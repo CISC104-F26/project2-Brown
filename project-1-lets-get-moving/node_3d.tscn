@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bckgobnviv10l"]
+
+[ext_resource type="Script" uid="uid://banmkhbpf2wet" path="res://player_3d.gd" id="1_a202f"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_noarx"]
+
+[sub_resource type="Sky" id="Sky_ijiyq"]
+sky_material = SubResource("PhysicalSkyMaterial_noarx")
+
+[sub_resource type="Environment" id="Environment_5clau"]
+background_mode = 2
+sky = SubResource("Sky_ijiyq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0e48y"]
+albedo_color = Color(1, 0.5254902, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_24hrv"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_0e48y")
+
+[sub_resource type="Environment" id="Environment_a202f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5clau"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5clau"]
+
+[node name="Node3D" type="Node3D" unique_id=606733476]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1865282310]
+environment = SubResource("Environment_5clau")
+
+[node name="Player_3d" type="MeshInstance3D" parent="." unique_id=1807176334]
+mesh = SubResource("SphereMesh_24hrv")
+script = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="Player_3d" unique_id=1638807737]
+transform = Transform3D(-0.047506277, -0.100661844, 0.9937858, -0.004806484, 0.9949207, 0.10054704, -0.99885935, -2.7755576e-17, -0.047748808, 2.7700503, 0.7805573, 0)
+environment = SubResource("Environment_a202f")
+fov = 37.849285
+
+[node name="girl_cube" type="MeshInstance3D" parent="." unique_id=497107259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2340052, 0, 1.0314832)
+mesh = SubResource("BoxMesh_5clau")
+
+[node name="Girl_Capsule" type="MeshInstance3D" parent="." unique_id=2055365973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.3408412)
+mesh = SubResource("CapsuleMesh_5clau")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=143189821]
+transform = Transform3D(0.030060811, -0.7649392, 0.6434008, 0.03570035, 0.6441026, 0.7641056, -0.9989103, 3.3215835e-09, 0.04667084, 2.264172, 1.0074494, 0)
+light_energy = 16.0

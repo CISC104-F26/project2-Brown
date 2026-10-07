@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cdp4osmtb1053"]
+
+[ext_resource type="Texture2D" uid="uid://ducsepableohf" path="res://goobergirl-2.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://cle1lgf8s7nfy" path="res://player.gd" id="2_epypp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0e48y"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ijiyq"]
+
+[node name="Node2D" type="Node2D" unique_id=1673749599]
+
+[node name="GooberGirl" type="Sprite2D" parent="." unique_id=127337680]
+z_index = 10
+texture = ExtResource("1_0e48y")
+script = ExtResource("2_epypp")
+
+[node name="Girl_circle" type="MeshInstance2D" parent="." unique_id=1830685710]
+self_modulate = Color(0.8627451, 0.6901961, 1, 1)
+position = Vector2(570, 378)
+scale = Vector2(-147.17123, -145.38348)
+mesh = SubResource("SphereMesh_0e48y")
+
+[node name="girl_square" type="MeshInstance2D" parent="." unique_id=2044821353]
+self_modulate = Color(0.96630734, 0.537849, 0.7766829, 1)
+position = Vector2(160, 245)
+scale = Vector2(134.5, 54)
+mesh = SubResource("CylinderMesh_ijiyq")
